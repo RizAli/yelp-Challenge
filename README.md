@@ -173,10 +173,10 @@ Failure/Error: fill_in 'Name', with: 'KFC'
 <% end %>
 
 ```
-
+```
 <%= form_for Restaurant.new do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit %>
 <% end %>
-
+```
