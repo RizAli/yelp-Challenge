@@ -1,0 +1,3 @@
+  [1m[36m (0.6ms)[0m  [1mCREATE DATABASE "yelp_clone_test" ENCODING = 'unicode'[0m
+PG::DuplicateDatabase: ERROR:  database "yelp_clone_test" already exists
+: CREATE DATABASE "yelp_clone_test" ENCODING = 'unicode'
