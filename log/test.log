@@ -1843,3 +1843,565 @@ Processing by RestaurantsController#show as HTML
   Rendered restaurants/show.html.erb within layouts/application (0.3ms)
 Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 0.2ms)
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:39:39 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 148ms (Views: 136.9ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:39:39.638692"], ["updated_at", "2015-04-21 19:39:39.638692"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:39:39 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:39:39 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+Started GET "/restaurants/new" for 127.0.0.1 at 2015-04-21 20:39:39 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 20ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+Started POST "/restaurants" for 127.0.0.1 at 2015-04-21 20:39:39 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "restaurant"=>{"name"=>"KFC"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:39:39.685887"], ["updated_at", "2015-04-21 19:39:39.685887"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/restaurants
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:39:39 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:39:39.698461"], ["updated_at", "2015-04-21 19:39:39.698461"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:39:39 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+Started GET "/restaurants/23" for 127.0.0.1 at 2015-04-21 20:39:39 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 23]]
+  Rendered restaurants/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:39:39.720429"], ["updated_at", "2015-04-21 19:39:39.720429"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurant" for 127.0.0.1 at 2015-04-21 20:39:39 +0100
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:43:51 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 134ms (Views: 124.7ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:43:52.135398"], ["updated_at", "2015-04-21 19:43:52.135398"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:43:52 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:43:52 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+Started GET "/restaurants/new" for 127.0.0.1 at 2015-04-21 20:43:52 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+Started POST "/restaurants" for 127.0.0.1 at 2015-04-21 20:43:52 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "restaurant"=>{"name"=>"KFC"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:43:52.173006"], ["updated_at", "2015-04-21 19:43:52.173006"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/restaurants
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:43:52 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:43:52.184608"], ["updated_at", "2015-04-21 19:43:52.184608"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:43:52 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+Started GET "/restaurants/27" for 127.0.0.1 at 2015-04-21 20:43:52 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 27]]
+  Rendered restaurants/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:43:52.203588"], ["updated_at", "2015-04-21 19:43:52.203588"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurant" for 127.0.0.1 at 2015-04-21 20:43:52 +0100
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:51:06 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 152ms (Views: 139.3ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:51:06.514329"], ["updated_at", "2015-04-21 19:51:06.514329"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:51:06 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:51:06 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+Started GET "/restaurants/new" for 127.0.0.1 at 2015-04-21 20:51:06 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 18ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+Started POST "/restaurants" for 127.0.0.1 at 2015-04-21 20:51:06 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "restaurant"=>{"name"=>"KFC"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:51:06.560153"], ["updated_at", "2015-04-21 19:51:06.560153"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/restaurants
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:51:06 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:51:06.572093"], ["updated_at", "2015-04-21 19:51:06.572093"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:51:06 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+Started GET "/restaurants/31" for 127.0.0.1 at 2015-04-21 20:51:06 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 31]]
+  Rendered restaurants/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 10ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:51:06.593283"], ["updated_at", "2015-04-21 19:51:06.593283"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurant" for 127.0.0.1 at 2015-04-21 20:51:06 +0100
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:15 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 140ms (Views: 130.6ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:58:15.677295"], ["updated_at", "2015-04-21 19:58:15.677295"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:15 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:15 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+Started GET "/restaurants/new" for 127.0.0.1 at 2015-04-21 20:58:15 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+Started POST "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:15 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "restaurant"=>{"name"=>"KFC"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:58:15.712096"], ["updated_at", "2015-04-21 19:58:15.712096"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/restaurants
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:15 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:58:15.724333"], ["updated_at", "2015-04-21 19:58:15.724333"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:15 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+Started GET "/restaurants/35/edit" for 127.0.0.1 at 2015-04-21 20:58:15 +0100
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"35"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 35]]
+  Rendered restaurants/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:58:15.745922"], ["updated_at", "2015-04-21 19:58:15.745922"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurant" for 127.0.0.1 at 2015-04-21 20:58:15 +0100
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:34 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 138ms (Views: 125.7ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:58:34.727655"], ["updated_at", "2015-04-21 19:58:34.727655"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:34 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:34 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+Started GET "/restaurants/new" for 127.0.0.1 at 2015-04-21 20:58:34 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+Started POST "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:34 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "restaurant"=>{"name"=>"KFC"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:58:34.765486"], ["updated_at", "2015-04-21 19:58:34.765486"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/restaurants
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:34 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:58:34.779744"], ["updated_at", "2015-04-21 19:58:34.779744"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:34 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+Started GET "/restaurants/39/edit" for 127.0.0.1 at 2015-04-21 20:58:34 +0100
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"39"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 39]]
+  Rendered restaurants/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:58:34.802559"], ["updated_at", "2015-04-21 19:58:34.802559"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurant" for 127.0.0.1 at 2015-04-21 20:58:34 +0100
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:43 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 132ms (Views: 123.2ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:58:43.494859"], ["updated_at", "2015-04-21 19:58:43.494859"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:43 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:43 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+Started GET "/restaurants/new" for 127.0.0.1 at 2015-04-21 20:58:43 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+Started POST "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:43 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "restaurant"=>{"name"=>"KFC"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:58:43.531438"], ["updated_at", "2015-04-21 19:58:43.531438"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/restaurants
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:43 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:58:43.544841"], ["updated_at", "2015-04-21 19:58:43.544841"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:58:43 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+Started GET "/restaurants/43/edit" for 127.0.0.1 at 2015-04-21 20:58:43 +0100
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"43"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 43]]
+  Rendered restaurants/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:58:43.565826"], ["updated_at", "2015-04-21 19:58:43.565826"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurant" for 127.0.0.1 at 2015-04-21 20:58:43 +0100
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:07 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 138ms (Views: 129.5ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:59:07.531821"], ["updated_at", "2015-04-21 19:59:07.531821"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:07 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:07 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+Started GET "/restaurants/new" for 127.0.0.1 at 2015-04-21 20:59:07 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+Started POST "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:07 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "restaurant"=>{"name"=>"KFC"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:59:07.571148"], ["updated_at", "2015-04-21 19:59:07.571148"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/restaurants
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:07 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:59:07.583449"], ["updated_at", "2015-04-21 19:59:07.583449"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:07 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+Started GET "/restaurants/47" for 127.0.0.1 at 2015-04-21 20:59:07 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"47"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 47]]
+  Rendered restaurants/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:59:07.605093"], ["updated_at", "2015-04-21 19:59:07.605093"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurant" for 127.0.0.1 at 2015-04-21 20:59:07 +0100
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:33 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 142ms (Views: 133.3ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:59:33.211908"], ["updated_at", "2015-04-21 19:59:33.211908"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:33 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:33 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+Started GET "/restaurants/new" for 127.0.0.1 at 2015-04-21 20:59:33 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+Started POST "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:33 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "restaurant"=>{"name"=>"KFC"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "KFC"], ["created_at", "2015-04-21 19:59:33.249860"], ["updated_at", "2015-04-21 19:59:33.249860"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/restaurants
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:33 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:59:33.262378"], ["updated_at", "2015-04-21 19:59:33.262378"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:33 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+Started GET "/restaurants/51" for 127.0.0.1 at 2015-04-21 20:59:33 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"51"}
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 51]]
+  Rendered restaurants/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "KFC"], ["created_at", "2015-04-21 19:59:33.282692"], ["updated_at", "2015-04-21 19:59:33.282692"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:33 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms)
+Started GET "/restaurants/52/edit" for 127.0.0.1 at 2015-04-21 20:59:33 +0100
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"52"}
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 52]]
+  Rendered restaurants/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.3ms)
+Started PATCH "/restaurants/52" for 127.0.0.1 at 2015-04-21 20:59:33 +0100
+Processing by RestaurantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "restaurant"=>{"name"=>"Kentucky Fried Chicken"}, "commit"=>"Update Restaurant", "id"=>"52"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 52]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "restaurants" SET "name" = $1, "updated_at" = $2 WHERE "restaurants"."id" = $3[0m  [["name", "Kentucky Fried Chicken"], ["updated_at", "2015-04-21 19:59:33.307705"], ["id", 52]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/restaurants
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+Started GET "/restaurants" for 127.0.0.1 at 2015-04-21 20:59:33 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
