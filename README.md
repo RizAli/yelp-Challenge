@@ -1,4 +1,4 @@
-# yelp-Challenge
+# yelp
 
 The goal is to learn the Rails, focusing especially on:
 
