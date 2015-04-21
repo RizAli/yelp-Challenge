@@ -19,3 +19,14 @@ Visitors can leave reviews for restaurants, providing a numerical score (1-5) an
 The restaurants listings page should display all the reviews, along with the average rating of each restaurant
 Validations should be in place for the restaurant and review forms - restaurants must be given a name and rating, reviews must be given a rating from 1-5 (comment is optional)
 
+- New rail app  -  $ rails new yelp_clone -d postgresql -T
+- Boot the server and migrate database: bin/rails s   , bin/rake db:create,  bin/rake db:create RAILS_ENV=test
+- Gems for testing - rspec-rails / capybara
+- $ bin/rails generate rspec:install
+- require 'capybara/rails' in rails_helper.rb  (to allow me use capybara in testing env for the purpose of writing acceptance test)
+
+
+
+
+
+
