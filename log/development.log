@@ -6036,3 +6036,424 @@ ActionView::MissingTemplate (Missing template reviews/create, application/create
   Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (137.5ms)
+
+
+Started POST "/restaurants/9/reviews" for ::1 at 2015-04-24 13:32:50 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"984MOQRoOleZMXfrNgkRa8dZQOusXuvWeSwDp3Zj+4d0JWehu4JSTwHlj7Cn1P/l8QfGmq9V8vMSbT5ym/wIGQ==", "review"=>{"thoughts"=>"asdfadf", "rating"=>"1"}, "commit"=>"Leave Review", "restaurant_id"=>"9"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "reviews" ("thoughts", "rating", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["thoughts", "asdfadf"], ["rating", 1], ["restaurant_id", 9], ["created_at", "2015-04-24 12:32:50.976833"], ["updated_at", "2015-04-24 12:32:50.976833"]]
+  [1m[35m (6.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 37ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-04-24 13:32:50 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 7]]
+  [1m[35mReview Exists (0.5ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 9]]
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 9]]
+  Rendered restaurants/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 222ms (Views: 219.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-24 13:32:51 +0100
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-24 13:32:51 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-24 13:32:51 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-24 13:32:51 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-24 13:32:51 +0100
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-24 13:32:51 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-24 13:32:51 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-24 13:32:51 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-24 13:32:51 +0100
+
+
+Started DELETE "/restaurants/9" for ::1 at 2015-04-24 13:32:59 +0100
+Processing by RestaurantsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tKiCKw0ZDb+eRSR+FKKGJDcjDN9qXEnikA/mHO8utsE3Q+mzsvNlpwaR3CWFf2iqAX2KrmlXUMf7TtvJArFFXw==", "id"=>"9"}
+  [1m[35mRestaurant Load (0.7ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  DELETE FROM "restaurants" WHERE "restaurants"."id" = $1  [["id", 9]]
+PG::ForeignKeyViolation: ERROR:  update or delete on table "restaurants" violates foreign key constraint "fk_rails_8173017a90" on table "reviews"
+DETAIL:  Key (id)=(9) is still referenced from table "reviews".
+: DELETE FROM "restaurants" WHERE "restaurants"."id" = $1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 4.9ms)
+
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "restaurants" violates foreign key constraint "fk_rails_8173017a90" on table "reviews"
+DETAIL:  Key (id)=(9) is still referenced from table "reviews".
+: DELETE FROM "restaurants" WHERE "restaurants"."id" = $1):
+  app/controllers/restaurants_controller.rb:35:in `destroy'
+
+
+  Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.5ms)
+  Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (56.9ms)
+  Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/rizcube/.rvm/rubies/ruby-2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (147.7ms)
+
+
+Started DELETE "/restaurants/9" for ::1 at 2015-04-24 13:33:16 +0100
+Processing by RestaurantsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tKiCKw0ZDb+eRSR+FKKGJDcjDN9qXEnikA/mHO8utsE3Q+mzsvNlpwaR3CWFf2iqAX2KrmlXUMf7TtvJArFFXw==", "id"=>"9"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 9]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 1]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "reviews" WHERE "reviews"."id" = $1  [["id", 2]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "restaurants" WHERE "restaurants"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 22ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-04-24 13:33:16 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 7]]
+  Rendered restaurants/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-24 13:33:16 +0100
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-24 13:33:16 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-24 13:33:16 +0100
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-24 13:33:16 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-24 13:33:16 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-24 13:33:16 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-24 13:33:16 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-24 13:33:16 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-24 13:33:16 +0100
+
+
+Started DELETE "/restaurants/7" for ::1 at 2015-04-24 13:33:19 +0100
+Processing by RestaurantsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ELm9W199ZRoF+MawYgY4d/PIszAhMJB7bqUJjAD9wieTUtbD4JcNAp0sPuvz29b5xZY1QSI7iV4F5DRZ7WIxuQ==", "id"=>"7"}
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 7]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mReview Load (0.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 7]]
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "restaurants" WHERE "restaurants"."id" = $1[0m  [["id", 7]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 9ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-04-24 13:33:19 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 47ms (Views: 45.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2015-04-24 13:33:21 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 57ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/restaurants" for ::1 at 2015-04-24 13:33:28 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NKj7nWEcxz8hdbWv/dq5I5C4Gfyj1o11qml40yu8Dq+3Q5AF3vavJ7mhTfRsB1etpuafjaDdlFDBKEUGxiP9MQ==", "restaurant"=>{"name"=>"Dinner"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Dinner"], ["created_at", "2015-04-24 12:33:28.410684"], ["updated_at", "2015-04-24 12:33:28.410684"]]
+  [1m[35m (5.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 10ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-04-24 13:33:28 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 10]]
+  Rendered restaurants/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2015-04-24 13:33:31 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 34ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/restaurants" for ::1 at 2015-04-24 13:33:34 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Okb1ZyxKjB6AP/i8jOUQEnViTDKf1qjMXONosQKFLka5rZ7/k6DkBhjrAOcdOP6cQzzKQ5zdsek3olVk7xrd2A==", "restaurant"=>{"name"=>"Winner"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Winner"], ["created_at", "2015-04-24 12:33:34.495246"], ["updated_at", "2015-04-24 12:33:34.495246"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 10ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-04-24 13:33:34 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 10]]
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 11]]
+  Rendered restaurants/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/restaurants/11" for ::1 at 2015-04-24 13:33:42 +0100
+Processing by RestaurantsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MrRvFfRasS8FPgAzFif+VBdSOy8krEmWVOQm0LyARKWxXwSNS7DZN53q+GiH+hDaIQy9XienULM/pRsFUR+3Ow==", "id"=>"11"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 11]]
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "restaurants" WHERE "restaurants"."id" = $1  [["id", 11]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-04-24 13:33:42 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 10]]
+  Rendered restaurants/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-04-24 16:10:34 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 10]]
+  Rendered restaurants/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 82ms (Views: 72.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-24 16:10:34 +0100
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-24 16:10:34 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-24 16:10:34 +0100
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-24 16:10:34 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-24 16:10:34 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-24 16:10:34 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-24 16:10:34 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-24 16:10:34 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-24 16:10:34 +0100
+
+
+Started GET "/restaurants/10/reviews/new" for ::1 at 2015-04-24 16:10:42 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"10"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 10]]
+  Rendered reviews/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2015-04-24 16:10:46 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/restaurants" for ::1 at 2015-04-24 16:10:48 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gpYsMrjCJDGITtZG36TYVXx4TBMRBbbJ7w+kjeAp9lQBfUeqByhMKRCaLh1OeTbbSibKYhIOr+yETplYDbYFyg==", "restaurant"=>{"name"=>"test"}, "commit"=>"Create Restaurant"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "test"], ["created_at", "2015-04-24 15:10:48.700947"], ["updated_at", "2015-04-24 15:10:48.700947"]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 12ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-04-24 16:10:48 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 10]]
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 12]]
+  Rendered restaurants/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 56ms (Views: 54.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-04-24 16:42:51 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.2ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 10]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 12]]
+  Rendered restaurants/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-24 16:42:51 +0100
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-24 16:42:51 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-24 16:42:51 +0100
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-24 16:42:51 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-24 16:42:51 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-24 16:42:51 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-24 16:42:51 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-24 16:42:51 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-24 16:42:51 +0100
+
+
+Started GET "/restaurants" for ::1 at 2015-04-24 16:43:08 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 10]]
+  [1m[36mReview Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 12]]
+  Rendered restaurants/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-24 16:43:08 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-04-24 16:43:08 +0100
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-04-24 16:43:08 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-04-24 16:43:08 +0100
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-04-24 16:43:08 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-24 16:43:08 +0100
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-04-24 16:43:08 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-04-24 16:43:08 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-04-24 16:43:08 +0100
+
+
+Started GET "/restaurants/new" for ::1 at 2015-04-24 16:43:15 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/restaurants" for ::1 at 2015-04-24 16:43:34 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G85VI2BBsAKQODmxL+6yc2ExNFx0jljIP1TPXC8ZcDGYJT6736vYGgjsweq+M1z9V2+yLXeFQe1UFfKJwoaDrw==", "restaurant"=>{"name"=>"Mc Donalds"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Mc Donalds"], ["created_at", "2015-04-24 15:43:34.163934"], ["updated_at", "2015-04-24 15:43:34.163934"]]
+  [1m[35m (5.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 9ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-04-24 16:43:34 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 10]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 12]]
+  [1m[36mReview Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 13]]
+  Rendered restaurants/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 36ms (Views: 34.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2015-04-24 16:43:44 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/restaurants" for ::1 at 2015-04-24 16:43:48 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bWNZwQb7H+z8fOZrxJ4aFys8Ew2UPKmZg74OZAnrKAzuiDJZuRF39GSoHjBVQ/SZHWKVfJc3sLzo/zOx5HTbkg==", "restaurant"=>{"name"=>"kf"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "restaurants" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "kf"], ["created_at", "2015-04-24 15:43:48.241764"], ["updated_at", "2015-04-24 15:43:48.241764"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 9ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-04-24 16:43:48 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 10]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 12]]
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1[0m  [["restaurant_id", 13]]
+  [1m[35mReview Exists (0.1ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = $1 LIMIT 1  [["restaurant_id", 14]]
+  Rendered restaurants/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.8ms)
