@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/RizAli/yelp-Challenge.svg?branch=yelp_development)](https://travis-ci.org/RizAli/yelp-Challenge)
+
+
 # yelp-Challenge
 
 The goal is to learn the Rails, focusing especially on:
