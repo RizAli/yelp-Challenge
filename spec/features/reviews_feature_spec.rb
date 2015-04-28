@@ -1,4 +1,6 @@
 require 'rails_helper'
+require 'spec_helper'
+
 
 feature 'reviewing' do
   before {Restaurant.create name: 'KFC'}
