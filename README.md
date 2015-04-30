@@ -1,7 +1,4 @@
-<!-- [![Build Status](https://travis-ci.org/RizAli/yelp-Challenge.svg?branch=yelp_development)](https://travis-ci.org/RizAli/yelp-Challenge)
-Master branch -->
 [![Build Status](https://travis-ci.org/RizAli/yelp-Challenge.svg?branch=master)](https://travis-ci.org/RizAli/yelp-Challenge)
-
 [![Code Climate](https://codeclimate.com/github/RizAli/yelp-Challenge/badges/gpa.svg)](https://codeclimate.com/github/RizAli/yelp-Challenge)
 [![Test Coverage](https://codeclimate.com/github/RizAli/yelp-Challenge/badges/coverage.svg)](https://codeclimate.com/github/RizAli/yelp-Challenge)
 
