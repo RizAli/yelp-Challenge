@@ -5,6 +5,8 @@ Devise.setup do |config|
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = '136c1e0e995717f03743bc68d940bffbadcdbc63a4b92248be334219787c9f445c810263d724189a27f04ec6bd264ec0c6aad6e876449d6d55f984fcb418ab18'
+  # config.omniauth :facebook, Rails.application.secrets.yelp_project_ID, Rails.application.secrets.yelp_project_secret_key
+  config.omniauth :facebook, Rails.application.secrets.facebook_secret_id , Rails.application.secrets.facebook_secret_key
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -233,6 +235,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
