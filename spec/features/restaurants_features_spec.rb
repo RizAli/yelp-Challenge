@@ -24,8 +24,18 @@ context 'restaurants have been added' do
 end
 
 context 'creating restaurants' do
+
+   before do
+    visit ('/')
+    click_link 'Sign up'
+    fill_in 'Email', with: 'test@gmail.com'
+    fill_in  'Password', with: 'testtest'
+    fill_in 'Password confirmation', with: 'testtest'
+    click_button 'Sign up'
+  end
+
   scenario 'prompts user to fill out a form, then displays the new restaurant' do
-    visit '/restaurants'
+    visit '/'
     click_link 'Add a restaurant'
     fill_in 'Name', with: 'KFC'
     click_button 'Create Restaurant'
@@ -34,6 +44,7 @@ context 'creating restaurants' do
   end
 
   context 'an invalid restaurant' do
+
     it 'does not let you submit a name that is too short' do
       visit '/restaurants'
       click_link 'Add a restaurant'
@@ -58,7 +69,13 @@ context 'viewing restaurants' do
 end
 
 context 'editing restaurant' do
-  before {Restaurant.create name: 'KFC'}
+  before do
+    sign_up
+    click_link 'Add a restaurant'
+    fill_in 'Name', with: 'KFC'
+    click_button 'Create Restaurant'
+  end
+
 
   scenario 'Let a user edit a restaurant' do
     visit '/restaurants'
@@ -71,6 +88,13 @@ context 'editing restaurant' do
 end
 
 context 'deleting restaurants' do
+  before do
+    sign_up
+    visit '/restaurants'
+    click_link 'Add a restaurant'
+    fill_in 'Name', with: 'Kentucky Fried Chicken'
+    click_button 'Create Restaurant'
+  end
 
     before {Restaurant.create name: 'KFC'}
     scenario 'removes a restaurant when a user clicks a delete link' do
@@ -81,9 +105,14 @@ context 'deleting restaurants' do
   end
 end
 
-
-
-
+def sign_up
+  visit ('/')
+  click_link 'Sign up'
+  fill_in 'Email', with: 'test@gmail.com'
+  fill_in  'Password', with: 'testtest'
+  fill_in 'Password confirmation', with: 'testtest'
+  click_button 'Sign up'
+end
 
 
 
