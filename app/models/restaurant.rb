@@ -10,6 +10,10 @@ class Restaurant < ActiveRecord::Base
     review
   end
 
+  # def build_review(attributes = {}, user)
+  #   attributes[:user] ||= user
+  #   reviews.build(attributes)
+  # end
 
 end
 

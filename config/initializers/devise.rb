@@ -6,8 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = '136c1e0e995717f03743bc68d940bffbadcdbc63a4b92248be334219787c9f445c810263d724189a27f04ec6bd264ec0c6aad6e876449d6d55f984fcb418ab18'
   # config.omniauth :facebook, Rails.application.secrets.yelp_project_ID, Rails.application.secrets.yelp_project_secret_key
-  config.omniauth :facebook, Rails.application.secrets.facebook_secret_id , Rails.application.secrets.facebook_secret_key
-
+  config.omniauth :facebook, Rails.application.secrets.facebook_app_id , Rails.application.secrets.facebook_app_secret
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
@@ -22,6 +21,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
+
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
