@@ -4,7 +4,6 @@ describe Restaurant, type: :model do
   it { is_expected.to have_many :reviews}
 end
 
-
 describe Restaurant, :type => :model do
   it 'is not valid with a name of less than three characters' do
     restaurant = Restaurant.new(name: "kf")
@@ -26,4 +25,23 @@ describe '#average_rating' do
       expect(restaurant.average_rating).to eq 'N/A'
     end
   end
+
+  context '1 review' do
+    it 'returns that rating' do
+      restaurant = Restaurant.create(name: 'The Ivy')
+      restaurant.reviews.create(rating: 4)
+      expect(restaurant.average_rating).to eq 4
+    end
+  end
+
+
+
 end
+
+
+
+
+
+
+
+
