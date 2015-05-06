@@ -626,6 +626,11 @@
       ],
       "/Users/rizcube/Documents/makers/yelp-challenge/app/helpers/reviews_helper.rb": [
         1,
+        1,
+        4,
+        2,
+        2,
+        null,
         null
       ],
       "/Users/rizcube/Documents/makers/yelp-challenge/app/models/restaurant.rb": [
@@ -694,6 +699,6 @@
         null
       ]
     },
-    "timestamp": 1430937699
+    "timestamp": 1430940134
   }
 }

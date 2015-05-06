@@ -16,6 +16,12 @@ feature 'reviewing' do
     expect(page).to have_content('so so')
   end
 
+  xscenario 'displays an average rating for all reviews' do
+    leave_review('so so', '3')
+    leave_review('Great!', '5')
+    expect(page).to have_content('Average rating: ★★★★☆')
+  end
+
   def leave_review(thoughts, rating)
     visit '/restaurants'
     click_link 'Review KFC'
