@@ -473,6 +473,8 @@
         null,
         1,
         1,
+        1,
+        null,
         null,
         null,
         null,
@@ -566,7 +568,7 @@
         null,
         null,
         1,
-        31,
+        32,
         null,
         null,
         1,
@@ -620,6 +622,10 @@
         1,
         null
       ],
+      "/Users/rizcube/Documents/makers/yelp-challenge/app/helpers/endorsements_helper.rb": [
+        1,
+        null
+      ],
       "/Users/rizcube/Documents/makers/yelp-challenge/app/helpers/restaurants_helper.rb": [
         1,
         null
@@ -627,9 +633,9 @@
       "/Users/rizcube/Documents/makers/yelp-challenge/app/helpers/reviews_helper.rb": [
         1,
         1,
+        6,
         5,
-        4,
-        4,
+        5,
         null,
         null
       ],
@@ -647,14 +653,14 @@
         null,
         null,
         1,
-        5,
+        7,
         null,
         null,
         null,
         null,
         null,
         null,
-        9,
+        13,
         null,
         null,
         null,
@@ -667,6 +673,21 @@
         1,
         1,
         1,
+        1,
+        null
+      ],
+      "/Users/rizcube/Documents/makers/yelp-challenge/app/models/endorsement.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/rizcube/Documents/makers/yelp-challenge/app/controllers/endorsements_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
         null
       ],
       "/Users/rizcube/Documents/makers/yelp-challenge/app/controllers/reviews_controller.rb": [
@@ -699,6 +720,6 @@
         null
       ]
     },
-    "timestamp": 1430988882
+    "timestamp": 1430996961
   }
 }

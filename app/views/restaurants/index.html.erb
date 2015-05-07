@@ -9,6 +9,9 @@
         <ul>
           <% restaurant.reviews.each do |review| %>
             <li><%= review.thoughts %>, <strong><%= review.rating %></strong>/5</li>
+            <%= link_to "Endorse #{restaurant.name}", review_endorsements_path(review) %>
+            <p><%= pluralize review.endorsements.count, 'endorsement' %></p>
+            <p><%= 'endorsement'.pluralize(review.endorsements.count) %>
           <% end %>
         </ul>
         <p>Average rating: <%= restaurant.average_rating.to_i %>
