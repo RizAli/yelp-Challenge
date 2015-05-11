@@ -568,7 +568,7 @@
         null,
         null,
         1,
-        41,
+        40,
         null,
         null,
         1,
@@ -633,9 +633,9 @@
       "/Users/rizcube/Documents/makers/yelp-challenge/app/helpers/reviews_helper.rb": [
         1,
         1,
-        13,
-        12,
-        12,
+        21,
+        20,
+        20,
         null,
         null
       ],
@@ -653,14 +653,14 @@
         null,
         null,
         1,
-        21,
+        28,
         null,
         null,
         null,
         null,
         null,
         null,
-        43,
+        59,
         null,
         null,
         null,
@@ -683,10 +683,12 @@
       ],
       "/Users/rizcube/Documents/makers/yelp-challenge/app/controllers/endorsements_controller.rb": [
         1,
+        null,
         1,
-        1,
-        1,
-        1,
+        0,
+        0,
+        0,
+        null,
         null,
         null
       ],
@@ -720,6 +722,6 @@
         null
       ]
     },
-    "timestamp": 1431346470
+    "timestamp": 1431359027
   }
 }
