@@ -40,7 +40,8 @@ group :test do
   gem 'rspec-collection_matchers'
   gem "codeclimate-test-reporter", require: nil
   gem 'launchy'
-
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :development, :test do
