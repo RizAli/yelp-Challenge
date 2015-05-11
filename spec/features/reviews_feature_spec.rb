@@ -16,8 +16,11 @@ feature 'reviewing' do
     expect(page).to have_content('so so')
   end
 
-  xscenario 'displays an average rating for all reviews' do
+  scenario 'displays an average rating for all reviews' do
+    sign_in
     leave_review('so so', '3')
+    sign_out
+    sign_in_user2
     leave_review('Great!', '5')
     expect(page).to have_content('Average rating: ★★★★☆')
   end
@@ -29,4 +32,26 @@ feature 'reviewing' do
     select rating, from: 'Rating'
     click_button 'Leave Review'
   end
+end
+
+def sign_in
+  visit '/users/sign_up'
+  fill_in "Email", with: "anabia@gmail.com"
+  fill_in "Password", with: "password"
+  fill_in "Password confirmation", with: "password"
+  click_button 'Sign up'
+end
+
+def sign_in_user2
+  visit '/users/sign_up'
+  fill_in "Email", with: "eeshal@gmail.com"
+  fill_in "Password", with: "password"
+  fill_in "Password confirmation", with: "password"
+  click_button 'Sign up'
+end
+
+
+def sign_out
+  visit '/'
+  click_link 'Sign out'
 end

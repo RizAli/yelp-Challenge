@@ -39,6 +39,7 @@ group :test do
   gem 'capybara'
   gem 'rspec-collection_matchers'
   gem "codeclimate-test-reporter", require: nil
+  gem 'launchy'
 
 end
 
