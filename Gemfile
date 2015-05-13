@@ -43,6 +43,7 @@ group :test do
   gem 'launchy'
   gem 'poltergeist'
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 group :development, :test do
