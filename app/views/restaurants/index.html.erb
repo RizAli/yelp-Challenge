@@ -1,6 +1,7 @@
 <% if Restaurant.all.any? %>
   <% @restaurants.each do |restaurant| %>
     <h2><%= link_to restaurant.name, restaurant_path(restaurant) %> <br></h2>
+
     <%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant)%>
     <%= link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete %>
     <%=  link_to "Review #{restaurant.name}",new_restaurant_review_path(restaurant) %>
@@ -13,6 +14,7 @@
               <%= review.thoughts %> Average rating: <%= star_rating(restaurant.average_rating) %>
               <%= link_to "Endorse #{restaurant.name}", review_endorsements_path(review), class: 'endorsements-link' %>
               <span class="endorsements_count"> <%= review.endorsements.count %> </span> <%= 'endorsement'.pluralize(review.endorsements.count) %>
+
             </li>
           <% end %>
         </ul>

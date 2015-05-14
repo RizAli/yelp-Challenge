@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'aws-sdk'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'shoulda'
